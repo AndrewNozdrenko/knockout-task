@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>knockout</title>
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+</head>
+<body>
+
+	<h1>Легкое использование существенных электронных документов (инструкций)</h1>
+	<div class="wrapper">
+		<div class="list-item">
+			<p>Список литературы</p>
+			<ul data-bind="foreach: availableBooks">
+				<li data-bind="text: name"></li>
+				<input type="checkbox" data-bind="value: name(), checked: $root.arrayId, click: $root.toggle"><br>
+			</ul>
+		</div>
+		<div class="send-message">
+			<p>Отправка письма</p>
+			<p>email</p>
+			<input type="text" name="email" data-bind="value: email">
+
+			<p>Тема</p>
+			<input type="text" name="topic" data-bind="value: topic">
+
+			<p>Текст письма</p>
+			<input type="text" name="textMessage" data-bind="value: text">
+
+			<p>Прикрепленные файлы</p>
+			<div data-bind="foreach: $root.arrayId">
+   				<span data-bind="text: $data"></span>
+   				<br/>
+			</div>
+			<button data-bind="event: {click: enableDetails}">Отправить</button>
+		</div>
+		<div class="display" data-bind="visible: detailsEnabled" >
+			<p data-bind="text: fullEmail"></p>
+			<p data-bind="text: fullTopic"></p>
+			<p data-bind="text: fullText"></p>
+
+			<div data-bind="foreach: $root.arrayId">
+   				<span data-bind="text: $data"></span>
+   				<br/>
+			</div>
+			<p class="close" data-bind="event: {click: disableDetails}">Закрыть</p>
+		</div>
+	</div>
+	<script src="knockout-3.1.0.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

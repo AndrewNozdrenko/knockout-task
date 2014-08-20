@@ -1,0 +1,60 @@
+h1{
+	color: red;
+}
+
+p{
+	width: 190px;
+}
+
+ul{
+	list-style: none;
+	cursor: pointer;
+	width: 400px;
+}
+
+ul li{
+	width: 200px;
+	display: inline-block;
+}
+
+.wrapper{
+	background: linear-gradient(to bottom, #6b6969, #fff);
+	width: 800px;
+	height: 500px;
+	margin: 0 auto;
+	padding: 10px;
+	display: -webkit-box;
+	-webkit-box-orient:horizontal;
+	-webkit-box-pack:center;
+}
+
+.send-message{
+	width: 195px;
+}
+
+button{
+	margin-top:20px;
+}
+
+.display{
+	width: 574px;
+	height: 418px;
+	position: absolute;
+	left: 24%;
+	background: #333333;
+	display: -webkit-box;
+	-webkit-box-orient:vertical;
+	-webkit-box-align:center;
+	-webkit-box-pack:center;
+}
+
+.display p, .display span{
+	color: #fff;
+}
+
+.close{
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	cursor: pointer;
+}
